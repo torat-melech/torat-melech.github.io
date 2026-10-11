@@ -98,6 +98,10 @@ window.SITE_CONFIG = {
       version: "1.0",
       size: "22.6 GB",
       url: "https://huggingface.co/datasets/NOAM212819/torat-melech/resolve/main/sochen/Setup-SochenChidushim-1.bin?download=true"
-    }
+    },
+
+    /* ---------- אזכיר ---------- */
+    "azkir-installer": { title: "אזכיר — קובץ התקנה", file: "Azkir-Setup-2.1.0.exe", version: "2.1.0", size: "126 MB", url: "https://huggingface.co/datasets/NOAM212819/torat-melech/resolve/main/azkir/Azkir-Setup-2.1.0.exe?download=true" },
+    "azkir-decks": { title: "אזכיר — מאגר חפיסות", file: "Azkir-Decks.zip", size: "כ-11.5 GB", url: "" }
   }
 };
