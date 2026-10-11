@@ -10,6 +10,7 @@
     menu: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
     download: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>',
     clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+    bank: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h18L12 4z"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 21h18"/></svg>',
     mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>'
   };
 
@@ -127,6 +128,26 @@
   });
 
   /* ---------- חלון תרומה ---------- */
+  function hasBank() { return !!(CFG.bank && CFG.bank.account); }
+  function bankHtml() {
+    if (!hasBank()) {
+      return '<p style="margin-bottom:6px">לתרומה ולפרטים ניתן לפנות אלינו במייל:</p>' +
+        '<a class="btn btn-gold btn-lg" href="mailto:' + CFG.email + '?subject=' + encodeURIComponent("תרומה למכון תורת מלך") + '">' + ICONS.mail + '<span style="direction:ltr">' + CFG.email + "</span></a>";
+    }
+    var b = CFG.bank;
+    var row = function (label, value, copy) {
+      if (!value) return "";
+      return '<div class="bank-row"><span class="bank-label">' + label + '</span><span class="bank-value">' + value + "</span>" +
+        (copy ? '<button type="button" class="bank-copy" data-copy="' + value + '" aria-label="העתקת ' + label + '">העתק</button>' : "<span></span>") + "</div>";
+    };
+    return '<div class="bank-card"><div class="bank-title">' + ICONS.bank + "<span>העברה בנקאית</span></div>" +
+      row("שם החשבון", b.holder, false) +
+      row("בנק", b.bank, false) +
+      row("סניף", b.branch, true) +
+      row("מספר חשבון", b.account, true) +
+      "</div>";
+  }
+
   var modal = document.createElement("div");
   modal.className = "modal";
   modal.setAttribute("role", "dialog");
@@ -140,8 +161,9 @@
       "<p>כל התוכנות ניתנות ללא תשלום. תרומתכם מאפשרת למכון להמשיך לפתח, לשפר ולהוסיף תוכנות חדשות לזיכוי הרבים.</p>" +
       (CFG.donateUrl
         ? '<a class="btn btn-gold btn-lg" href="' + CFG.donateUrl + '" target="_blank" rel="noopener">' + ICONS.heart + "<span>למעבר לעמוד התרומה</span></a>"
-        : '<p style="margin-bottom:6px">לתרומה ולפרטים ניתן לפנות אלינו במייל:</p>' +
-          '<a class="btn btn-gold btn-lg" href="mailto:' + CFG.email + '?subject=' + encodeURIComponent("תרומה למכון תורת מלך") + '">' + ICONS.mail + '<span style="direction:ltr">' + CFG.email + "</span></a>") +
+        : bankHtml()) +
+      (CFG.donateUrl || !hasBank() ? "" :
+        '<p class="bank-note">לאחר ההעברה נשמח אם תשלחו לנו מייל ל-<a href="mailto:' + CFG.email + '?subject=' + encodeURIComponent("תרומה בהעברה בנקאית") + '" style="direction:ltr;display:inline-block">' + CFG.email + "</a>, כדי שנוכל להודות לכם.</p>") +
     "</div>";
   body.appendChild(modal);
 
@@ -149,7 +171,15 @@
   function openModal(m) { lastFocus = document.activeElement; m.classList.add("is-open"); var c = m.querySelector(".close"); if (c) c.focus(); }
   function closeModal(m) { m.classList.remove("is-open"); if (lastFocus) lastFocus.focus(); }
 
-  modal.addEventListener("click", function (e) { if (e.target === modal || e.target.closest(".close")) closeModal(modal); });
+  modal.addEventListener("click", function (e) {
+    var c = e.target.closest(".bank-copy");
+    if (c) {
+      var done = function () { c.textContent = "הועתק ✓"; setTimeout(function () { c.textContent = "העתק"; }, 1800); };
+      if (navigator.clipboard) navigator.clipboard.writeText(c.dataset.copy).then(done, function () {});
+      return;
+    }
+    if (e.target === modal || e.target.closest(".close")) closeModal(modal);
+  });
   document.addEventListener("click", function (e) {
     var t = e.target.closest("[data-donate]");
     if (t) { e.preventDefault(); openModal(modal); }
