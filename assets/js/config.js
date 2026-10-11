@@ -78,12 +78,14 @@ window.SITE_CONFIG = {
     "sochen-exe": {
       title: "סוכן החידושים — קובץ ההתקנה",
       file: "Setup-SochenChidushim.exe",
+      version: "1.0",
       size: "4 MB",
       url: "https://huggingface.co/datasets/NOAM212819/torat-melech/resolve/main/sochen/Setup-SochenChidushim.exe?download=true"
     },
     "sochen-bin": {
       title: "סוכן החידושים — חבילת הנתונים",
       file: "Setup-SochenChidushim-1.bin",
+      version: "1.0",
       size: "22.6 GB",
       url: "https://huggingface.co/datasets/NOAM212819/torat-melech/resolve/main/sochen/Setup-SochenChidushim-1.bin?download=true"
     }
