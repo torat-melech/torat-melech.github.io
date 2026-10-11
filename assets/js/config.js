@@ -41,7 +41,7 @@ window.SITE_CONFIG = {
       size: "15.3 GB",
       url: "https://huggingface.co/datasets/NOAM212819/torat-melech/resolve/main/sefer/Sefer-Library-Full.zip?download=true"
     },
-    // אפשרות 2: בשני חלקים — ספרי טקסט (כולל קישורים, אינדקס ומודל AI) + ספרי PDF
+    // אפשרות 2: בשני חלקים — ספרי טקסט (כולל קישורים, אינדקס ומנוע חכם) + ספרי PDF
     "sefer-db-text": {
       title: "מאגר ספרים — ספרי טקסט",
       file: "Sefer-Library-Text.zip",

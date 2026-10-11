@@ -26,7 +26,7 @@
           <p class="lead">תוכנה לשיפור הזיכרון בכרטיסי חזרה. אזכיר יודעת מתי בדיוק להציג לכם כל כרטיס, ממש לפני שהוא נשכח, כך שמה שלמדתם נשאר איתכם לאורך זמן.</p>
           <div class="hero-cta">
             <a class="btn btn-gold btn-lg" href="#download">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
               <span>להורדה</span>
             </a>
           </div>
@@ -36,7 +36,35 @@
       </div>
     </section>
 
-    <section class="section">
+    <!-- גלריה -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">מבט מקרוב</span>
+          <h2>ככה זה נראה</h2>
+          <p>לחצו על תמונה כדי להגדיל אותה.</p>
+        </div>
+        <div class="reveal" data-gallery="אזכיר">
+          <div class="gallery-main">
+            <div class="chrome"><i></i><i></i><i></i><span>אזכיר</span></div>
+            <button type="button" class="view" aria-label="הגדלת צילום המסך">
+              <img src="assets/img/azkir/shot-2.webp" alt="" width="1920" height="1032">
+            </button>
+          </div>
+          <p class="gallery-caption" aria-live="polite"></p>
+          <div class="gallery-thumbs" style="--cols:6;--cols-sm:3">
+            <button type="button" data-full="assets/img/azkir/shot-2.webp" data-caption="מסך הבית: חפיסות, הדף היומי ותובנות זיכרון"><img src="assets/img/azkir/shot-2-sm.webp" alt="מסך הבית: חפיסות, הדף היומי ותובנות זיכרון" loading="lazy"></button>
+            <button type="button" data-full="assets/img/azkir/shot-1.webp" data-caption="יצירת כרטיסים מטקסט בלחיצה"><img src="assets/img/azkir/shot-1-sm.webp" alt="יצירת כרטיסים מטקסט בלחיצה" loading="lazy"></button>
+            <button type="button" data-full="assets/img/azkir/shot-5.webp" data-caption="מאגר שאלות מוכן: ש&quot;ס, משנה ברורה ועוד"><img src="assets/img/azkir/shot-5-sm.webp" alt="מאגר שאלות מוכן: ש&quot;ס, משנה ברורה ועוד" loading="lazy"></button>
+            <button type="button" data-full="assets/img/azkir/shot-4.webp" data-caption="מפת הש&quot;ס שלי: כמה מכל מסכת אתם זוכרים"><img src="assets/img/azkir/shot-4-sm.webp" alt="מפת הש&quot;ס שלי: כמה מכל מסכת אתם זוכרים" loading="lazy"></button>
+            <button type="button" data-full="assets/img/azkir/shot-3.webp" data-caption="סטטיסטיקות ותחזית חזרות"><img src="assets/img/azkir/shot-3-sm.webp" alt="סטטיסטיקות ותחזית חזרות" loading="lazy"></button>
+            <button type="button" data-full="assets/img/azkir/shot-6.webp" data-caption="כלי זיכרון מתקדמים"><img src="assets/img/azkir/shot-6-sm.webp" alt="כלי זיכרון מתקדמים" loading="lazy"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
       <div class="container">
         <div class="section-head reveal">
           <span class="kicker">מה יש בתוכנה</span>
@@ -73,16 +101,32 @@
             <h3>סטטיסטיקות ותחזית</h3>
             <p>דיוק שליפה, רצף ימים, לוח פעילות ותחזית של החזרות הצפויות. ייבוא מקלדסור (XML) וייצוא.</p>
           </div>
+          <div class="feature reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+            <h3>מאגר שאלות מוכן</h3>
+            <p>מאות אלפי שאלות מוכנות על הש"ס, משנה ברורה, משניות, תנ"ך ועוד. בוחרים נושא ומייבאים בלחיצה.</p>
+          </div>
+          <div class="feature reveal reveal-delay-1">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z"/><path d="M8 2v16M16 6v16"/></svg></div>
+            <h3>מפת הש"ס שלי</h3>
+            <p>מפה צבעונית של כל מסכתות הש"ס, שמראה כמה מכל מסכת אתם באמת זוכרים.</p>
+          </div>
+          <div class="feature reveal reveal-delay-2">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+            <h3>הדף היומי</h3>
+            <p>שאלות על הדף היומי מחכות לכם כל בוקר, ואפשר להוסיף אותן לחזרות אוטומטית.</p>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="download">
+    <section class="section" id="download">
       <div class="container">
         <div class="section-head reveal"><span class="kicker">הורדה</span><h2>הורדת אזכיר</h2></div>
         <div class="downloads reveal" style="max-width:920px;margin-inline:auto">
-          <div class="download-item primary"><div class="file-icon">⬇</div><div><h3>תוכנת אזכיר <span class="tag required">חובה</span></h3><p>קובץ ההתקנה של התוכנה.</p><div class="file-meta" data-download-meta="azkir-installer"></div></div><a class="btn btn-gold" data-download="azkir-installer" data-label="הורדת התוכנה"></a></div>
-          <div class="download-item"><div class="file-icon">📚</div><div><h3>מאגר חפיסות <span class="tag">מומלץ</span></h3><p>חפיסות מוכנות, מאגר השאלות ומודלי הבינה המלאכותית המקומיים. מחלצים לתיקייה בשם "מאגר חפיסות" על שולחן העבודה.</p><div class="file-meta" data-download-meta="azkir-decks"></div></div><a class="btn btn-navy" data-download="azkir-decks"></a></div>
+          <div class="download-item primary"><div class="file-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div><h3>תוכנת אזכיר <span class="tag required">חובה</span></h3><p>קובץ ההתקנה של התוכנה.</p><div class="file-meta" data-download-meta="azkir-installer"></div></div><a class="btn btn-gold" data-download="azkir-installer" data-label="הורדת התוכנה"></a></div>
+          <div class="download-item"><div class="file-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="16" height="12" rx="2"/><path d="M6 21h12a2 2 0 0 0 2-2V9"/></svg></div><div><h3>מאגר חפיסות <span class="tag">מומלץ</span></h3><p>חפיסות מוכנות, מאגר השאלות והמנוע החכם המקומי. מחלצים לתיקייה בשם "מאגר חפיסות" על שולחן העבודה.</p><div class="file-meta" data-download-meta="azkir-decks"></div></div><a class="btn btn-navy" data-download="azkir-decks"></a></div>
         </div>
       </div>
     </section>

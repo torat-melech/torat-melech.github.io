@@ -755,3 +755,4 @@ p { margin: 0 0 1em; }
   .promo-cta { display: none; }
   .promo-phone { padding: 2px 10px; }
 }
+.theme-azkir .gallery-thumbs { --gallery-accent: var(--azkir); }
