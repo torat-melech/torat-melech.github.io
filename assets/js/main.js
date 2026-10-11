@@ -161,7 +161,7 @@
       "<p>כל התוכנות ניתנות ללא תשלום. תרומתכם מאפשרת למכון להמשיך לפתח, לשפר ולהוסיף תוכנות חדשות לזיכוי הרבים.</p>" +
       (CFG.donateUrl
         ? '<a class="btn btn-gold btn-lg" href="' + CFG.donateUrl + '" target="_blank" rel="noopener">' + ICONS.heart + "<span>לתרומה מאובטחת</span></a>" +
-          '<p class="bank-note">התשלום מתבצע דרך PayPal באתר Ko-fi. אפשר לשלם בכרטיס אשראי, בלי להירשם.</p>"
+          '<p class="bank-note">התשלום מתבצע דרך PayPal באתר Ko-fi. אפשר לשלם בכרטיס אשראי, בלי להירשם.</p>'
         : bankHtml()) +
       (CFG.donateUrl || !hasBank() ? "" :
         '<p class="bank-note">לאחר ההעברה נשמח אם תשלחו לנו מייל ל-<a href="mailto:' + CFG.email + '?subject=' + encodeURIComponent("תרומה בהעברה בנקאית") + '" style="direction:ltr;display:inline-block">' + CFG.email + "</a>, כדי שנוכל להודות לכם.</p>") +
