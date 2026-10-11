@@ -26,7 +26,18 @@
   var header = document.getElementById("site-header");
   if (header) {
     header.className = "site-header" + (body.dataset.header === "light" ? " is-light" : "");
+    var course = CFG.course;
     header.innerHTML =
+      (course
+        ? '<a class="promo-ribbon" href="' + course.url + '" target="_blank" rel="noopener">' +
+            '<span class="container promo-ribbon-inner">' +
+              '<img src="assets/img/course-thumb.webp" alt="" width="30" height="30">' +
+              '<span class="promo-tag">חדש</span>' +
+              '<span class="promo-text"><strong class="promo-long">' + course.title + '</strong><strong class="promo-short">קורס טלפוני: עיון בגמרא</strong><span class="promo-extra"> · בשיטת תבניות החשיבה, מכל טלפון ובכל שעה</span></span>' +
+              '<span class="promo-cta">לפרטים ←</span>' +
+            "</span>" +
+          "</a>"
+        : "") +
       '<div class="container bar">' +
         '<a class="brand" href="index.html" aria-label="דף הבית — תוכנות מבית מכון תורת מלך">' +
           '<img src="assets/logos/torat-melech.png" alt="" width="46" height="46">' +

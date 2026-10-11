@@ -6,6 +6,12 @@
 window.SITE_CONFIG = {
   email: "DT0548438958@GMAIL.COM",
 
+  // פרסומת לקורס — מופיעה בפס העליון ובדף הבית
+  course: {
+    url: "https://hamachadsh-betuvo.netlify.app/",
+    title: "המחדש בטובו: קורס טלפוני ללימוד עיון בגמרא"
+  },
+
   // קישור לעמוד תרומה (נדרים פלוס / PayPal וכו'). אם ריק — הכפתור יפתח חלון עם פרטי יצירת קשר.
   donateUrl: "",
 
