@@ -72,6 +72,20 @@ window.SITE_CONFIG = {
       version: "2.6.0",
       size: "5.1 GB",
       url: "https://huggingface.co/datasets/NOAM212819/torat-melech/resolve/main/hamechadesh/HaMechadesh-BeTuvo-Setup-2.6.0.nsisbin?download=true"
+    },
+
+    /* ---------- סוכן החידושים ---------- */
+    "sochen-exe": {
+      title: "סוכן החידושים — קובץ ההתקנה",
+      file: "Setup-SochenChidushim.exe",
+      size: "4 MB",
+      url: ""
+    },
+    "sochen-bin": {
+      title: "סוכן החידושים — חבילת הנתונים",
+      file: "Setup-SochenChidushim-1.bin",
+      size: "22.6 GB",
+      url: ""
     }
   }
 };

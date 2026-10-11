@@ -721,3 +721,8 @@ p { margin: 0 0 1em; }
 }
 .promo-short { display: none; }
 @media (max-width: 520px) { .promo-long { display: none; } .promo-short { display: inline; } }
+
+.theme-sochen .gallery-thumbs { --gallery-accent: var(--sochen); }
+.mode-grid.pipeline { grid-template-columns: repeat(5, 1fr); }
+@media (max-width: 960px) { .mode-grid.pipeline { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px) { .mode-grid.pipeline { grid-template-columns: repeat(2, 1fr); } }
