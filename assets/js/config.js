@@ -102,6 +102,6 @@ window.SITE_CONFIG = {
 
     /* ---------- אזכיר ---------- */
     "azkir-installer": { title: "אזכיר — קובץ התקנה", file: "Azkir-Setup-2.1.0.exe", version: "2.1.0", size: "126 MB", url: "https://huggingface.co/datasets/NOAM212819/torat-melech/resolve/main/azkir/Azkir-Setup-2.1.0.exe?download=true" },
-    "azkir-decks": { title: "אזכיר — מאגר חפיסות", file: "Azkir-Decks.zip", size: "כ-11.5 GB", url: "" }
+    "azkir-decks": { title: "אזכיר — מאגר חפיסות", file: "Azkir-Decks.zip", size: "11.7 GB", url: "https://huggingface.co/datasets/NOAM212819/torat-melech/resolve/main/azkir/Azkir-Decks.zip?download=true" }
   }
 };
