@@ -11,6 +11,7 @@
     download: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>',
     clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
     bank: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h18L12 4z"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 21h18"/></svg>',
+    phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>',
     mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>'
   };
 
@@ -30,14 +31,19 @@
     var course = CFG.course;
     header.innerHTML =
       (course
-        ? '<a class="promo-ribbon" href="' + course.url + '" target="_blank" rel="noopener">' +
-            '<span class="container promo-ribbon-inner">' +
-              '<img src="assets/img/course-thumb.webp" alt="" width="30" height="30">' +
-              '<span class="promo-tag">חדש</span>' +
-              '<span class="promo-text"><strong class="promo-long">' + course.title + '</strong><strong class="promo-short">קורס טלפוני: עיון בגמרא</strong><span class="promo-extra"> · בשיטת תבניות החשיבה, מכל טלפון ובכל שעה</span></span>' +
-              '<span class="promo-cta">לפרטים ←</span>' +
-            "</span>" +
-          "</a>"
+        ? '<div class="promo-ribbon">' +
+            '<div class="container promo-ribbon-inner">' +
+              '<a class="promo-link" href="' + course.url + '" target="_blank" rel="noopener">' +
+                '<img src="assets/img/course-thumb.webp" alt="" width="30" height="30">' +
+                '<span class="promo-tag">חדש</span>' +
+                '<span class="promo-text"><strong class="promo-long">' + course.title + '</strong><strong class="promo-short">קורס טלפוני: עיון בגמרא</strong><span class="promo-extra"> · מכל טלפון ובכל שעה</span></span>' +
+              "</a>" +
+              (course.phone
+                ? '<a class="promo-phone" href="tel:' + course.phone + '" aria-label="חיוג לקו הקורס ' + course.phoneDisplay + '">' + ICONS.phone + '<bdi dir="ltr">' + course.phoneDisplay + "</bdi></a>"
+                : "") +
+              '<a class="promo-cta" href="' + course.url + '" target="_blank" rel="noopener">לפרטים ←</a>' +
+            "</div>" +
+          "</div>"
         : "") +
       '<div class="container bar">' +
         '<a class="brand" href="index.html" aria-label="דף הבית — תוכנות מבית מכון תורת מלך">' +

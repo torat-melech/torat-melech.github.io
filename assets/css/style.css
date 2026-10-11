@@ -739,3 +739,19 @@ p { margin: 0 0 1em; }
 .bank-copy:hover { border-color: var(--gold-500); background: var(--gold-200); }
 .bank-note { font-size: .88rem; margin: 16px 0 0; }
 .bank-note a { color: var(--gold-600); font-weight: 600; }
+
+/* פס עליון: קישור + טלפון */
+.promo-link { display: flex; align-items: center; gap: 12px; min-width: 0; color: inherit; }
+.promo-phone {
+  display: inline-flex; align-items: center; gap: 7px; flex: none;
+  padding: 3px 12px; border-radius: 999px; font-weight: 700; color: var(--navy-950);
+  background: linear-gradient(135deg, var(--gold-200), var(--gold-400));
+  transition: transform .2s, box-shadow .2s;
+}
+.promo-phone svg { width: 15px; height: 15px; }
+.promo-phone:hover { transform: translateY(-1px); box-shadow: 0 4px 14px -4px rgba(220,188,108,.8); }
+@media (max-width: 520px) {
+  .promo-ribbon-inner { gap: 8px; }
+  .promo-cta { display: none; }
+  .promo-phone { padding: 2px 10px; }
+}
